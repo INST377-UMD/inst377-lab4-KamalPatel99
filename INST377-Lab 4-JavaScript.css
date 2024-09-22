@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: skyblue;
+    display: block;
+    margin: 8px;
+}
+
+.container {
+    overflow: hidden;
+    margin: 5px;
+
+}
+
+.section {
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color: indigo;
+    color: white;
+    padding: 20px;
+    width: 30%;
+    float: left;
+    margin: 5px;
+    text-align: center;
+    
+}
+
+.alignment-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alignment-form label, .alignment-form input, .alignment-form button {
+    margin: 5px;
+}
+
+#alert-section {
+    clear: left;
+}
+
+#validate-section {
+    clear: left;
+}
+
+#add-text-section {
+    clear: right;
+}
+
