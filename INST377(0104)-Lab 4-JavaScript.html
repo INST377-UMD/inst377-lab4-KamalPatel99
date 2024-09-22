@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>INST377 Lab 4: JavaScript Intro: Dynamic Web Page</title>
+        <link rel="stylesheet" href="INST377-Lab 4-JavaScript.css">
+    </head>
+    <body>
+        <h1 id="heading">INST377 Lab 4: JavaScript Intro: Dynamic Web Page</h1>
+
+        <div class="container">
+
+            <div class="section" id="alert-section">
+                <form name="alertForm" onsubmit="return showAlert()">
+                    <div class="alignment-form">
+                        <label for="alertName">Name: </label>
+                        <input type="text" id="alertName" name="alertName" required>
+                        <button type="submit">Alert Me!</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="section" id="color-section">
+                <button onclick="changeColor()">Change Color</button>
+
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="section" id="validate-section">
+                <form name="validateForm" onsubmit="return(textValidation());">
+                    <div class="alignment-form">
+                        <label for="validateText">Text: </label>
+                        <input type="text" id="validateText" name="validateText">
+                        <button type="submit">Validate Text</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="section" id="add-text-section">
+                <button onclick="addText()">Add Text</button>
+
+            </div>
+        </div>
+
+        <script type="text/JavaScript">
+
+            function showAlert() {
+                const name = document.alertForm.alertName.value;
+                alert('Hi ' + name + '!');
+                return false;
+
+            }
+
+            let isBlue = true;
+            function changeColor() {
+                if(isBlue) {
+                    document.body.style.backgroundColor = 'green';
+
+                } else {
+                    document.body.style.backgroundColor = 'blue';
+                }
+                isBlue = !isBlue;
+            }
+
+            function textValidation() {
+
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|<>\/?]+/
+                let text = document.validateForm.validateText.value;
+
+                if(text === "") {
+                    alert('Please enter text without any special characters!!!');
+                    return false;
+                }
+                if (validation.test(text)) {
+                    alert('Special characters are not allowed! :)');
+                    return false;
+                }
+                return true;
+            
+            }
+            
+
+            function addText() {
+                const heading = document.getElementById('heading');
+                heading.textContent += ' Add Text';
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>INST377 (0104) - Lab 4: JavaScript</title>
+    </head>
+    <body>
+        <h1 id="words">INST (0104) - Lab 4: JavaScript </h1>
+
+        <button onclick="changeColor()">CHANGE THE COLOUR</button>
+
+        <script type="text/JavaScript">
+            function changeColor() {
+                if (document.getElementById('words').style.color == 'red') {
+                    const t = document.getElementById('words').style.color = 'black';
+                } else {
+                    const t = document.getElementById('words').style.color = 'red';
+                }
+            }
+        </script>
+    </body>
+</html>
